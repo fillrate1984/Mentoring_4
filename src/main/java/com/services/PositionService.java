@@ -1,10 +1,12 @@
 package com.services;
 
 import com.models.Position;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
+@Component
 public class PositionService {
 
     private HashMap<String, Position> positions = new HashMap<>();

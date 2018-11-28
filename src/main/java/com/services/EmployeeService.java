@@ -3,9 +3,11 @@ package com.services;
 import com.models.Employee;
 import com.models.Position;
 import com.models.Salary;
+import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
 
+@Component
 public class EmployeeService {
 
     private static HashSet<Employee> employees = new HashSet<>();

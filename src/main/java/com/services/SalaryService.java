@@ -2,9 +2,11 @@ package com.services;
 
 import com.interfaces.Observer;
 import com.models.Salary;
+import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
 
+@Component
 public class SalaryService implements Observer {
 
     private static double dollarRate = 2.1;

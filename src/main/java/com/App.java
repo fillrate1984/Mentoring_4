@@ -6,31 +6,41 @@ import com.models.Salary;
 import com.services.EmployeeService;
 import com.services.PositionService;
 import com.services.SalaryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App {
+
+    @Autowired
+    static Employee wowa;
+    @Autowired
+    static Employee denis;
+    @Autowired
+    static Employee pavlik;
+    @Autowired
+    static PositionService positionService;
+    @Autowired
+    static EmployeeService employeeService;
+    @Autowired
+    SalaryService salaryService;
+
     public static void main(String[] args) {
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("employees.xml");
-        Employee wowa = ctx.getBean("wowa", Employee.class);
-        Employee denis = ctx.getBean("denis", Employee.class);
-        Employee pavlik = ctx.getBean("pavlik", Employee.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext("employees.xml");
 
-        PositionService positionService = ctx.getBean("positionService", PositionService.class);
         positionService.addPosition(new Position("Programmer", new Salary(1000)));
         positionService.addPosition(new Position("Teacher", new Salary(300)));
         positionService.addPosition(new Position("Driver", new Salary(600)));
 
-
-        EmployeeService employeeService = ctx.getBean("employeeService", EmployeeService.class);
         employeeService.hireEmployee(wowa, positionService.getByName("Programmer"));
         employeeService.hireEmployee(pavlik, positionService.getByName("Teacher"));
         employeeService.hireEmployee(denis, positionService.getByName("Driver"));
 
-        SalaryService salaryService = ctx.getBean("salaryService", SalaryService.class);
+        /*SalaryService ss = salaryService;
+
         Lifecycle lifecycle = new Lifecycle();
-        lifecycle.addObserver(salaryService);
-        lifecycle.startLifecycle();
+        lifecycle.addObserver();
+        lifecycle.startLifecycle();*/
     }
 }
