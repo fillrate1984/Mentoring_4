@@ -21,4 +21,9 @@ public class Position {
     public void setSalary(Salary salary) {
         this.salary = salary;
     }
+
+    @Override
+    public String toString() {
+        return "Position - " + name;
+    }
 }

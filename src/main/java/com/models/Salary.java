@@ -29,4 +29,9 @@ public class Salary {
         this.valueBYN = value;
     }
 
+    @Override
+    public String toString() {
+        String salary = String.valueOf(valueBYN);
+        return "Salary - " + salary;
+    }
 }

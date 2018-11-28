@@ -20,4 +20,10 @@ public class Employee {
     public Employee(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        String salary = String.valueOf(position.getSalary().getValueInBYN());
+        return String.format("Employee: %s has position - %s with salary - %s BYN", name, position, salary);
+    }
 }

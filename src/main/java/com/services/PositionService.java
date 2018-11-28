@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class PositionService {
 
-    private HashMap<String, Position> positions = new HashMap<String, Position>();
+    private HashMap<String, Position> positions = new HashMap<>();
 
     public void addPosition(Position position) {
         positions.put(position.getName(), position);
@@ -22,6 +22,6 @@ public class PositionService {
     }
 
     public ArrayList<Position> getPositionsList() {
-        return new ArrayList<Position>(positions.values());
+        return new ArrayList<>(positions.values());
     }
 }

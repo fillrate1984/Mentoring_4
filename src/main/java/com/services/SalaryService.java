@@ -10,7 +10,6 @@ public class SalaryService implements Observer {
     private static double dollarRate = 2.1;
     private static int inflation = 50;
     private static HashSet<Salary> salaries = new HashSet<>();
-    private HashSet<Observer> observers = new HashSet<>();
 
     public static void setDollarRate(double newValue) {
         dollarRate = newValue;
@@ -39,6 +38,5 @@ public class SalaryService implements Observer {
         double increasedValue = (dollarRate * inflation) / 100;
         double newDollarRateValue = dollarRate + increasedValue;
         setDollarRate(newDollarRateValue);
-        printSalaries();
     }
 }

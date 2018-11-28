@@ -2,12 +2,13 @@ package com;
 
 import com.interfaces.Observable;
 import com.interfaces.Observer;
+import com.services.EmployeeService;
 
 import java.util.HashSet;
 
 public class Lifecycle implements Observable {
 
-    HashSet<Observer> observers = new HashSet<>();
+    private HashSet<Observer> observers = new HashSet<>();
 
     public void startLifecycle() {
         for (int i = 0; i < 48; i++) {
@@ -18,6 +19,7 @@ public class Lifecycle implements Observable {
             }
             System.out.printf("---------------Month %d passed---------------\n", i);
             notifyAllObservers();
+            EmployeeService.printAllEmployees();
         }
     }
 
