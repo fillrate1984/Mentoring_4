@@ -29,8 +29,6 @@ public class App {
         App app = ctx.getBean(App.class);
         app.run();
 
-        System.out.println(app.salaryService);
-
         Lifecycle lifecycle = new Lifecycle();
         lifecycle.addObserver(app.salaryService);
         lifecycle.startLifecycle();
