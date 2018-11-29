@@ -3,7 +3,6 @@ package com.models;
 import com.services.SalaryService;
 import org.springframework.stereotype.Component;
 
-@Component
 public class Salary {
 
     private int valueBYN;

@@ -2,11 +2,10 @@ package com.models;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class Employee {
 
     private String name;
-    private Position position;
+    private Position position = null;
 
     public String getName() {
         return name;
